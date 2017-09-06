@@ -38,11 +38,31 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	/** TODO 
-		Fix this method
-	*/
+	if(m_front == nullptr)//check for empty list
+	{
+	}
+	else
+	{
+		
+		while((temp -> getValue() != value))
+		{
+			if(temp -> getNext() != nullptr)//increment the list unless the end is reached
+			{
+			temp = temp -> getNext();
+			}
+			else
+			{
+				return(isFound);//if the end was reached without the value then return
+			}
+		}
+		if(temp -> getValue() == value)//if the value is found change state to true
+		{
+			isFound = true;
+		}
+	}	
 
 	return(isFound);
+	
 }
 
 template <typename T>
